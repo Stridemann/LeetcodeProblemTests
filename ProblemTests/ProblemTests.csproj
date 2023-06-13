@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="10. Regular Expression Matching.cs" />
+    <Compile Remove="11. Container With Most Water.cs" />
+    <Compile Remove="11.Container With Most Water.cs" />
+    <Compile Remove="17. Letter Combinations of a Phone Number.cs" />
+    <Compile Remove="17.Letter Combinations of a Phone Number.cs" />
+    <Compile Remove="206. Reverse Linked List.cs" />
+    <Compile Remove="21. Merge Two Sorted Lists.cs" />
+    <Compile Remove="23. Merge k Sorted Lists.cs" />
+    <Compile Remove="26. Remove Duplicates from Sorted Array.cs" />
+    <Compile Remove="27. Remove Element.cs" />
+    <Compile Remove="28. Find the Index of the First Occurrence in a String.cs" />
+    <Compile Remove="35. Search Insert Position.cs" />
+    <Compile Remove="37. Sudoku Solver.cs" />
+    <Compile Remove="UnitTest1.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
+    <PackageReference Include="Shouldly" Version="4.2.1" />
+    <PackageReference Include="xunit" Version="2.4.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector" Version="3.2.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Utils\" />
+  </ItemGroup>
+
+</Project>
