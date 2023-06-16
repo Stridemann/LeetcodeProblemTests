@@ -14,16 +14,25 @@
     <Compile Remove="10. Regular Expression Matching.cs" />
     <Compile Remove="11. Container With Most Water.cs" />
     <Compile Remove="11.Container With Most Water.cs" />
+    <Compile Remove="12. Integer to Roman.cs" />
+    <Compile Remove="125. Valid Palindrome.cs" />
+    <Compile Remove="15. 3Sum.cs" />
     <Compile Remove="17. Letter Combinations of a Phone Number.cs" />
     <Compile Remove="17.Letter Combinations of a Phone Number.cs" />
+    <Compile Remove="1929. Concatenation of Array.cs" />
     <Compile Remove="206. Reverse Linked List.cs" />
     <Compile Remove="21. Merge Two Sorted Lists.cs" />
     <Compile Remove="23. Merge k Sorted Lists.cs" />
+    <Compile Remove="2423. Remove Letter To Equalize Frequency.cs" />
     <Compile Remove="26. Remove Duplicates from Sorted Array.cs" />
     <Compile Remove="27. Remove Element.cs" />
     <Compile Remove="28. Find the Index of the First Occurrence in a String.cs" />
     <Compile Remove="35. Search Insert Position.cs" />
     <Compile Remove="37. Sudoku Solver.cs" />
+    <Compile Remove="58. Length of Last Word.cs" />
+    <Compile Remove="66. Plus One.cs" />
+    <Compile Remove="67. Add Binary.cs" />
+    <Compile Remove="8. String to Integer %28atoi%29.cs" />
     <Compile Remove="UnitTest1.cs" />
   </ItemGroup>
 
