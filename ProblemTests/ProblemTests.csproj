@@ -17,6 +17,7 @@
     <Compile Remove="12. Integer to Roman.cs" />
     <Compile Remove="125. Valid Palindrome.cs" />
     <Compile Remove="15. 3Sum.cs" />
+    <Compile Remove="16. 3Sum Closest.cs" />
     <Compile Remove="17. Letter Combinations of a Phone Number.cs" />
     <Compile Remove="17.Letter Combinations of a Phone Number.cs" />
     <Compile Remove="1929. Concatenation of Array.cs" />
@@ -29,10 +30,16 @@
     <Compile Remove="28. Find the Index of the First Occurrence in a String.cs" />
     <Compile Remove="35. Search Insert Position.cs" />
     <Compile Remove="37. Sudoku Solver.cs" />
+    <Compile Remove="43. Multiply Strings.cs" />
+    <Compile Remove="45. Jump Game II.cs" />
+    <Compile Remove="48. Rotate Image.cs" />
     <Compile Remove="58. Length of Last Word.cs" />
     <Compile Remove="66. Plus One.cs" />
     <Compile Remove="67. Add Binary.cs" />
+    <Compile Remove="78. Subsets.cs" />
+    <Compile Remove="79. Word Search.cs" />
     <Compile Remove="8. String to Integer %28atoi%29.cs" />
+    <Compile Remove="Remove_Nth_Node_From_End_of_List.cs" />
     <Compile Remove="UnitTest1.cs" />
   </ItemGroup>
 

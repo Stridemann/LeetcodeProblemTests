@@ -30,6 +30,15 @@ public class ListNode
         return head;
     }
 
+    #region Overrides of Object
+
+    public override string ToString()
+    {
+        return $">{val}<";
+    }
+
+    #endregion
+
     public string PrintMe
     {
         get
