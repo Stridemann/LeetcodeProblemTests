@@ -57,6 +57,7 @@
     <Compile Remove="Jump Game II.cs" />
     <Compile Remove="Length of Last Word.cs" />
     <Compile Remove="Letter Combinations of a Phone Number.cs" />
+    <Compile Remove="Longest Palindromic Substring.cs" />
     <Compile Remove="Longest Substring Without Repeating Characters.cs" />
     <Compile Remove="Longest Valid Parentheses.cs" />
     <Compile Remove="Maximum Depth of Binary Tree.cs" />
@@ -69,7 +70,6 @@
     <Compile Remove="Plus One.cs" />
     <Compile Remove="Pow%28x, n%29.cs" />
     <Compile Remove="Rectangle Area.cs" />
-    <Compile Remove="Regular Expression Matching.cs" />
     <Compile Remove="Remove Duplicates from Sorted Array.cs" />
     <Compile Remove="Remove Duplicates from Sorted List.cs" />
     <Compile Remove="Remove Element.cs" />
@@ -89,6 +89,7 @@
     <Compile Remove="UnitTest1.cs" />
     <Compile Remove="Valid Palindrome.cs" />
     <Compile Remove="Word Search.cs" />
+    <Compile Remove="Zigzag Conversion.cs" />
   </ItemGroup>
 
   <ItemGroup>
