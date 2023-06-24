@@ -30,6 +30,8 @@
     <Compile Remove="28. Find the Index of the First Occurrence in a String.cs" />
     <Compile Remove="35. Search Insert Position.cs" />
     <Compile Remove="37. Sudoku Solver.cs" />
+    <Compile Remove="3Sum Closest.cs" />
+    <Compile Remove="3Sum.cs" />
     <Compile Remove="43. Multiply Strings.cs" />
     <Compile Remove="45. Jump Game II.cs" />
     <Compile Remove="48. Rotate Image.cs" />
@@ -39,8 +41,54 @@
     <Compile Remove="78. Subsets.cs" />
     <Compile Remove="79. Word Search.cs" />
     <Compile Remove="8. String to Integer %28atoi%29.cs" />
+    <Compile Remove="Add Binary.cs" />
+    <Compile Remove="Add Two Numbers.cs" />
+    <Compile Remove="Binary Tree Inorder Traversal.cs" />
+    <Compile Remove="Binary Tree Maximum Path Sum.cs" />
+    <Compile Remove="Climbing Stairs.cs" />
+    <Compile Remove="Concatenation of Array.cs" />
+    <Compile Remove="Connect n ropes with minimum cost.cs" />
+    <Compile Remove="Container With Most Water.cs" />
+    <Compile Remove="Decompress Run-Length Encoded List.cs" />
+    <Compile Remove="Find First and Last Position of Element in Sorted Array.cs" />
+    <Compile Remove="Find the Index of the First Occurrence in a String.cs" />
+    <Compile Remove="Group Anagrams.cs" />
+    <Compile Remove="Integer to Roman.cs" />
+    <Compile Remove="Jump Game II.cs" />
+    <Compile Remove="Length of Last Word.cs" />
+    <Compile Remove="Letter Combinations of a Phone Number.cs" />
+    <Compile Remove="Longest Substring Without Repeating Characters.cs" />
+    <Compile Remove="Longest Valid Parentheses.cs" />
+    <Compile Remove="Maximum Depth of Binary Tree.cs" />
+    <Compile Remove="Max_Area_of_Island.cs" />
+    <Compile Remove="Merge k Sorted Lists.cs" />
+    <Compile Remove="Merge Sorted Array.cs" />
+    <Compile Remove="Merge Two Sorted Lists.cs" />
+    <Compile Remove="Multiply Strings.cs" />
+    <Compile Remove="N-Queens.cs" />
+    <Compile Remove="Plus One.cs" />
+    <Compile Remove="Pow%28x, n%29.cs" />
+    <Compile Remove="Rectangle Area.cs" />
+    <Compile Remove="Regular Expression Matching.cs" />
+    <Compile Remove="Remove Duplicates from Sorted Array.cs" />
+    <Compile Remove="Remove Duplicates from Sorted List.cs" />
+    <Compile Remove="Remove Element.cs" />
+    <Compile Remove="Remove Letter To Equalize Frequency.cs" />
     <Compile Remove="Remove_Nth_Node_From_End_of_List.cs" />
+    <Compile Remove="Reverse Linked List.cs" />
+    <Compile Remove="Rotate Array.cs" />
+    <Compile Remove="Same Tree.cs" />
+    <Compile Remove="Search Insert Position.cs" />
+    <Compile Remove="String Compression II.cs" />
+    <Compile Remove="String Compression.cs" />
+    <Compile Remove="String to Integer %28atoi%29.cs" />
+    <Compile Remove="Subsets.cs" />
+    <Compile Remove="Sudoku Solver.cs" />
+    <Compile Remove="Symmetric Tree.cs" />
+    <Compile Remove="Trapping Rain Water.cs" />
     <Compile Remove="UnitTest1.cs" />
+    <Compile Remove="Valid Palindrome.cs" />
+    <Compile Remove="Word Search.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -55,10 +103,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Utils\" />
   </ItemGroup>
 
 </Project>

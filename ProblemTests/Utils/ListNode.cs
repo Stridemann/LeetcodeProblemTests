@@ -30,6 +30,11 @@ public class ListNode
         return head;
     }
 
+    public static ListNode FromString(string cfg)
+    {
+        return GetList(cfg.Replace(" ", string.Empty).TrimStart('[').TrimEnd(']').Split(',').Select(int.Parse).ToArray());
+    }
+
     #region Overrides of Object
 
     public override string ToString()
