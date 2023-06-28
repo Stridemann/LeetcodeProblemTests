@@ -1,20 +1,20 @@
-using Shouldly;
+﻿using Shouldly;
 
-public class Trapping_Rain_Water
+public class Trapping_Rain_Water_II
 {
     [Theory]
-    [InlineData(new[] { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 }, 6)]
+    [InlineData(new[] { -1, 2, 1, -4 }, 2)]
     public void Test(int[] nums, int expected)
     {
         var s = new Solution();
-        var result = s.Trap(nums);
+        var result = s.RemoveNthFromEnd(nums, target);
         result.ShouldBe(expected);
     }
 }
 
 public class Solution
 {
-    public int Trap(int[] h)
+    public int TrapRainWater(int[][] heightMap)
     {
         var v = new int[h.Length];
         int a = 0;

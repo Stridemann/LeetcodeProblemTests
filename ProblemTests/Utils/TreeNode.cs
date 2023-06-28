@@ -7,6 +7,7 @@ public class TreeNode
     public TreeNode? left;
     public TreeNode? right;
 
+    [DebuggerStepThrough]
     public TreeNode(int val = 0, TreeNode? left = null, TreeNode? right = null)
     {
         this.val = val;
