@@ -15,28 +15,19 @@ public class Linked_List_Random_Node
 
 public class Solution
 {
-    private ListNode? _node;
-    private int _max;
-    private int _randIter;
-    private ListNode _head;
+    private readonly List<ListNode> _nodes = new List<ListNode>();
 
     public Solution(ListNode head)
     {
-        _head = head;
-        _node = head;
+        for (var current = head; current != null; current = current.next)
+        {
+            _nodes.Add(current);
+        }
     }
 
     public int GetRandom()
     {
-        if (_node == null)
-        {
-            _node = _head;
-        }
-
-        var nodeVal = _node.val;
-        _node = _node.next;
-        _max++;
-
-        return nodeVal;
+        var rand = new Random();
+        return _nodes[rand.Next(_nodes.Count)].val;
     }
 }

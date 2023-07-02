@@ -60,14 +60,17 @@
     <Compile Remove="First Missing Positive.cs" />
     <Compile Remove="Group Anagrams.cs" />
     <Compile Remove="Integer to Roman.cs" />
+    <Compile Remove="Intersection of Two Linked Lists.cs" />
     <Compile Remove="Jump Game II.cs" />
     <Compile Remove="Length of Last Word.cs" />
     <Compile Remove="Letter Combinations of a Phone Number.cs" />
     <Compile Remove="Linked List Cycle.cs" />
     <Compile Remove="Linked List Random Node.cs" />
+    <Compile Remove="Longest Mountain in Array.cs" />
     <Compile Remove="Longest Palindromic Substring.cs" />
     <Compile Remove="Longest Substring Without Repeating Characters.cs" />
     <Compile Remove="Longest Valid Parentheses.cs" />
+    <Compile Remove="LRU Cache.cs" />
     <Compile Remove="Maximum Depth of Binary Tree.cs" />
     <Compile Remove="Max_Area_of_Island.cs" />
     <Compile Remove="Merge k Sorted Lists.cs" />
@@ -99,6 +102,7 @@
     <Compile Remove="Sudoku Solver.cs" />
     <Compile Remove="Symmetric Tree.cs" />
     <Compile Remove="Text Justification.cs" />
+    <Compile Remove="Trapping Rain Water II.cs" />
     <Compile Remove="Trapping Rain Water.cs" />
     <Compile Remove="UnitTest1.cs" />
     <Compile Remove="Valid Palindrome.cs" />
@@ -110,6 +114,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
     <PackageReference Include="Shouldly" Version="4.2.1" />
+    <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
     <PackageReference Include="xunit" Version="2.4.2" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
