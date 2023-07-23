@@ -1,3 +1,3 @@
 global using Xunit;
 global using Shouldly;
-using System.Collections;
+global using System.Collections;

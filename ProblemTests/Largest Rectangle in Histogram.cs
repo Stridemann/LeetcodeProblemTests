@@ -1,11 +1,10 @@
-﻿using Shouldly;
-
-public class Largest_Rectangle_in_Histogram
+﻿public class Largest_Rectangle_in_Histogram
 {
     [Theory]
     [InlineData(new[] { 2, 1, 5, 6, 2, 3 }, 10)]
     [InlineData(new[] { 2, 4 }, 4)]
     [InlineData(new[] { 0, 9 }, 9)]
+    [InlineData(new[] { 2, 1, 2 }, 3)]
     public void Test(int[] nums, int expected)
     {
         var s = new Solution();
@@ -16,38 +15,44 @@ public class Largest_Rectangle_in_Histogram
 
 public class Solution
 {
-    public int LargestRectangleArea(int[] heights)
+    public int LargestRectangleArea(int[] height)
     {
-        if (heights.Length == 0)
-            return 0;
+        if (height.Length == 1)
+            return height[0];
+        int[] lessFromLeft = new int[height.Length]; // idx of the first bar the left that is lower than current
+        int[] lessFromRight = new int[height.Length]; // idx of the first bar the right that is lower than current
+        lessFromRight[height.Length - 1] = height.Length;
+        lessFromLeft[0] = -1;
 
-        if (heights.Length == 1)
-            return heights[0];
-        var maxArea = 0;
-
-        for (int x = 0; x < heights.Length; x++)
+        for (int i = 1; i < height.Length; i++)
         {
-            var maxHeight = heights[x];
+            int p = i - 1;
 
-            if (maxArea < maxHeight)
-                maxArea = maxHeight;
-
-            for (int xInc = x + 1; xInc < heights.Length; xInc++)
+            while (p >= 0 && height[p] >= height[i])
             {
-                var curHeight = heights[xInc];
-
-                if (curHeight == 0)
-                    break;
-
-                if (maxHeight > curHeight)
-                    maxHeight = curHeight;
-
-                var curWidth = xInc - x + 1;
-                var curArea = curWidth * maxHeight;
-
-                if (maxArea < curArea)
-                    maxArea = curArea;
+                p = lessFromLeft[p];
             }
+
+            lessFromLeft[i] = p;
+        }
+
+        for (int i = height.Length - 2; i >= 0; i--)
+        {
+            int p = i + 1;
+
+            while (p < height.Length && height[p] >= height[i])
+            {
+                p = lessFromRight[p];
+            }
+
+            lessFromRight[i] = p;
+        }
+
+        int maxArea = 0;
+
+        for (int i = 0; i < height.Length; i++)
+        {
+            maxArea = Math.Max(maxArea, height[i] * (lessFromRight[i] - lessFromLeft[i] - 1));
         }
 
         return maxArea;

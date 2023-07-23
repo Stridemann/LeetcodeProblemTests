@@ -23,4 +23,12 @@ public class TreeNode
     }
 
     #endregion
+
+    public TreeNode? FindNodeWithValue(int value)
+    {
+        if (val == value)
+            return this;
+
+        return left?.FindNodeWithValue(value) ?? right?.FindNodeWithValue(value);
+    }
 }

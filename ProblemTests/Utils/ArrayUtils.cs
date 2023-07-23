@@ -28,6 +28,11 @@ public static class ArrayUtils
         return $"[{string.Join(",", arr.Select(x => $"[{string.Join(",", x)}]"))}]";
     }
 
+    public static string ArrayToStr(int[] arr)
+    {
+        return $"[{string.Join(",", arr)}]";
+    }
+
     public static char[][] CharArrayFromStr(string str)
     {
         str = str.Replace(" ", string.Empty).TrimStart('[').TrimEnd(']');

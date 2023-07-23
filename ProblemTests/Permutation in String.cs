@@ -1,14 +1,12 @@
-﻿public class Find_All_Anagrams_in_a_String
+﻿public class Permutation_in_String
 {
     [Theory]
-    [InlineData("cbaebabacd", "abc", new[] { 0, 6 })]
-    [InlineData("abacbabc", "abc", new[] { 1, 2, 3, 5 })]
-    [InlineData("abab", "ab", new[] { 0, 1, 2 })]
-    [InlineData("aaaaaaaaaa", "aaaaaaaaaaaaa", new int[] { })]
-    public void Test(string s, string p, int[] expected)
+    [InlineData("ab", "eidbaooo", true)]
+    [InlineData("ab", "eidboaoo", false)]
+    public void Test(string input, string input2, bool expected)
     {
-        var sol = new Solution();
-        var result = sol.FindAnagrams(s, p);
+        var s = new Solution();
+        var result = s.CheckInclusion(input, input2);
         result.ShouldBe(expected);
     }
 }
@@ -18,12 +16,10 @@ public class Solution
     private readonly int[] _charArr = new int[26];
     private int _diff;
 
-    public IList<int> FindAnagrams(string s, string p)
+    public bool CheckInclusion(string p, string s)
     {
-        if (p.Length > s.Length)
-            return new List<int>();
-
-        var result = new List<int>();
+        if (s.Length < p.Length)
+            return false;
 
         foreach (var pChar in p)
         {
@@ -42,7 +38,7 @@ public class Solution
         {
             if (_diff == 0)
             {
-                result.Add(leftInd);
+                return true;
             }
 
             if (rightInd >= s.Length - 1)
@@ -54,12 +50,12 @@ public class Solution
             Inc(incChar);
         }
 
-        return result;
+        return false;
     }
 
     private void Decr(char ch)
     {
-        switch (System.Threading.Interlocked.Decrement(ref _charArr[ch - 'a']))
+        switch (--_charArr[ch - 'a'])
         {
             case 0:
                 _diff--;
@@ -74,7 +70,7 @@ public class Solution
 
     private void Inc(char ch)
     {
-        switch (System.Threading.Interlocked.Increment(ref _charArr[ch - 'a']))
+        switch (++_charArr[ch - 'a'])
         {
             case 0:
                 _diff--;

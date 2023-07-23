@@ -4,6 +4,7 @@ public class Linked_List_Cycle
 {
     [Theory]
     [InlineData("[3,2,0,-4]", true)]
+    [InlineData("[1]", false)]
     public void Test(string headStr, bool expected)
     {
         var s = new Solution();
@@ -17,13 +18,17 @@ public class Solution
 {
     public bool HasCycle(ListNode head)
     {
-        for (var temp = head; temp != null; temp = temp.next)
+        if (head == null)
+            return false;
+        var slow = head;
+        var fast = head.next;
+
+        while (slow != fast && fast != null)
         {
-            if (temp.val == 99999)
-                return true;
-            temp.val = 99999;
+            slow = slow.next;
+            fast = fast.next?.next;
         }
 
-        return false;
+        return slow == fast;
     }
 }

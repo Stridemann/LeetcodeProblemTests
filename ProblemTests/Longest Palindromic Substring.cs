@@ -1,6 +1,4 @@
-﻿using Shouldly;
-
-public class Longest_Palindromic_Substring
+﻿public class Longest_Palindromic_Substring
 {
     [Theory]
     [InlineData("babad", "bab")]
@@ -23,69 +21,47 @@ public class Solution
     public string LongestPalindrome(string s)
     {
         if (s.Length == 1)
-            return s;
-        var sbstrInd = 0;
-        var sbstrLen = 1;
-
-        for (int i = 0; i < s.Length - 1; i++)
         {
-            var testOdd = true;
-            var testPair = true;
+            return s;
+        }
+        var T = new char[s.Length * 2 + 3];
+        T[0] = '$';
+        T[s.Length * 2 + 2] = '@';
+        for (var i = 0; i < s.Length; i++)
+        {
+            T[2 * i + 1] = '#';
+            T[2 * i + 2] = s[i];
+        }
+        T[s.Length * 2 + 1] = '#';
+        ///////////////////////////////////
+        var p = new int[T.Length];
+        int center = 0, right = 0;
+        for (var i = 1; i < T.Length - 1; i++)
+        {
+            var mirr = 2 * center - i;
+            if (i < right)
+                p[i] = Math.Min(right - i, p[mirr]);
+            while (T[i + 1 + p[i]] == T[i - (1 + p[i])])
+                p[i]++;
 
-            for (int chkOffst = 1; chkOffst <= s.Length / 2; chkOffst++)
+            if (i + p[i] > right)
             {
-                var rt = i + chkOffst;
-
-                if (rt >= s.Length)
-                    break;
-
-                var lt = i - chkOffst;
-                var lt2 = i - chkOffst + 1;
-
-                var found = false;
-
-                if (lt2 >= 0 && s[lt2] == s[rt] && (chkOffst == 1 || testOdd))
-                {
-                    var len = rt - lt2 + 1;
-
-                    if (sbstrLen < len)
-                    {
-                        sbstrInd = lt2;
-                        sbstrLen = len;
-                    }
-
-                    found = true;
-                }
-                else
-                {
-                    testOdd = false;
-                }
-
-                if (lt >= 0 && s[lt] == s[rt] && (chkOffst == 1 || testPair))
-                {
-                    var len = rt - lt + 1;
-
-                    if (sbstrLen < len)
-                    {
-                        sbstrInd = lt;
-                        sbstrLen = len;
-                    }
-
-                    found = true;
-                }
-                else
-                {
-                    testPair = false;
-                }
-
-                if (!found)
-                    break;
+                center = i;
+                right = i + p[i];
             }
         }
-
-        if (sbstrInd == -1)
-            return string.Empty;
-
-        return s.Substring(sbstrInd, sbstrLen);
+        ///////////////////////////////////
+        var length = 0;
+        center = 0;
+        for (var i = 1; i < p.Length - 1; i++)
+        {
+            if (p[i] > length)
+            {
+                length = p[i];
+                center = i;
+            }
+        }
+        var startIndex = (center - 1 - length) / 2;
+        return s.Substring(startIndex, length);
     }
 }
