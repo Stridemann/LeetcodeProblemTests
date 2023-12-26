@@ -11,7 +11,7 @@
 
 public class Solution
 {
-    private readonly Stack<int> _queue = new Stack<int>();
+    private readonly List<int> _subset = new List<int>();
     private List<IList<int>> _result;
     private int[] _nums;
 
@@ -29,15 +29,15 @@ public class Solution
     {
         if (curNum >= _nums.Length)
         {
-            _result.Add(new List<int>(_queue.Reverse()));
+            _result.Add(new List<int>(_subset.ToList()));
 
             return;
         }
 
         var item = _nums[curNum];
-        _queue.Push(item);
+        _subset.Add(item);
         GetSubset(curNum + 1);
-        _queue.Pop();
+        _subset.RemoveAt(_subset.Count - 1);
         GetSubset(curNum + 1);
     }
 }

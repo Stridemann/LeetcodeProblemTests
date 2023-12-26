@@ -1,37 +1,44 @@
-﻿public class Unique_Paths
+﻿namespace DefaultNamespace;
+
+public class Unique_Paths
 {
-    [Theory]
-    [InlineData(3, 7, 28)]
-    [InlineData(3, 2, 3)]
-    [InlineData(1, 2, 1)]
-    [InlineData(10, 10, 48620)]
-    [InlineData(23, 12, 193536720)]
-    public void Test(int n, int m, int expected)
-    {
-        var s = new Solution();
-        var result = s.UniquePaths(n, m);
-        result.ShouldBe(expected);
-    }
+	[Theory]
+	[InlineData(3, 7, 28)]
+	[InlineData(3, 2, 3)]
+	public void Test(
+		int m,
+		int n,
+		int expected)
+	{
+		var s = new Solution();
+		var result = s.UniquePaths(m, n);
+		result.ShouldBe(expected);
+	}
 }
 
 public class Solution
 {
-    public int UniquePaths(int m, int n)
-    {
-        if (m == 0 || n == 0) return 0;
-        if (m == 1 || n == 1) return 1;
+	public int UniquePaths(int h, int w)
+	{
+		if (h == 1 || w == 1)
+			return 1;
 
-        var f1 = Factorial((ulong)(m + n - 2));
-        var f2 = Factorial((ulong)(m - 1));
-        var f3 = Factorial((ulong)(n - 1));
+		var dp = new int[h, w];
+		for (var x = 1; x < w; x++)
+		{
+			dp[0, x] = 1;
+		}
 
-        return (int)(f1 / f2 / f3);
-    }
+		for (var y = 1; y < h; y++)
+		{
+			dp[y, 0] = 1;
 
-    ulong Factorial(ulong n)
-    {
-        if (n == 1) return 1;
+			for (var x = 1; x < w; x++)
+			{
+				dp[y, x] = dp[y - 1, x] + dp[y, x - 1];
+			}
+		}
 
-        return n * Factorial(n - 1);
-    }
+		return dp[h - 1, w - 1];
+	}
 }

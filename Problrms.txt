@@ -1,0 +1,75 @@
+﻿https://leetcode.com/problems/zigzag-conversion/
+string convert(string s, int n) 
+{
+  vector<string> res(n,"");     
+  for (int j = 0, m = (n==1) ? 1 : 2*n-2; j < s.size();  ++j)
+    res[n-1-abs(n-1-j % m)] += s[j];
+  return accumulate(begin(res), end(res), string());
+}
+https://leetcode.com/problems/trapping-rain-water/
+int trap(vector<int>& h) 
+{
+  vector<int> v(h.size(), 0);
+  int a(0);
+  for (int i(0), m(0); i < h.size(); m = v[i] = max(h[i], m), ++i);
+  for (int i(h.size()-1), m(0); i >= 0; a += min(v[i], m = max(h[i], m)) - h[i--]);
+  return a;
+}
+https://leetcode.com/problems/integer-to-roman/
+string intToRoman(int num) 
+{
+  string res;
+  array x{1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+  array s{"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};             
+  for (auto i = 0; num > 0; (num >= x[i]) ? (res += s[i], num -= x[i]) : i++);
+  return res;        
+}
+https://leetcode.com/problems/container-with-most-water/
+int maxArea(vector<int>& h) 
+{
+  int sum = 0;
+  for (int p = 0, q = h.size()-1; p!=q; h[p] < h[q] ? p++ : q--)
+    sum = max(sum, min(h[p], h[q]) * (q-p));    
+  return sum;
+}
+https://leetcode.com/problems/text-justification/
+vector<string> fullJustify(vector<string>& words, int maxWidth) 
+{    
+  vector<string> res;
+  for (int q = 0, p = q, sw = maxWidth; q < words.size(); p = q, sw = maxWidth)
+  {
+    for (;q < words.size() && sw >= int(words[q].size()); sw -= words[q++].size() + 1);
+    int sp = (q >= words.size() || q-p == 1) ? q - p - 1 : sw + q - p; 
+    res.push_back(words[q-1] + string(sw + q - p - sp, ' '));
+    for (int i=q-2; p <= i; sp -= sp / (i-p+1), --i)    
+      res.back() = words[i] + string(sp / (i-p+1), ' ') + res.back();
+  }
+  return res;        
+}
+leetcode.com/problems/house-robber
+int maxSubArray(vector<int>& nums)
+{     
+  auto m = nums[0]; 
+  accumulate(begin(nums), end(nums), 0, [&m](auto s, auto i){s=(s<0)? i : s+i; m=max(m,s); return s;});
+  return m;
+}
+leetcode.com/problems/house-robber
+int rob(vector<int>& v)
+{
+  int t(0), nt(0);
+  for_each(begin(v), end(v), [&t, &nt](auto n){t=n+exchange(nt, max(t, nt));});   
+  return max(t, nt);      
+}
+https://leetcode.com/problems/longest-mountain-in-array/
+int longestMountain(vector<int>& A) 
+{  
+  int m = 0, s = A.size()-1;
+  for (int i(1), vl(0), vr(0), B(0), p(0); i<=s; ++i)
+  {
+    B  = i < s ? A[i+1] : 10001;
+    p  = A[i-1] < A[i] && B < A[i] ? i : p;
+    vl = (A[i-1] >= A[i] && B >= A[i]) ? exchange(vr, i) : vl;
+    m  = vl < p && p < vr ? max(vr - vl + 1, m) : m;
+  }
+  return m;
+}

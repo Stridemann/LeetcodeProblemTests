@@ -47,7 +47,7 @@ public static class ArrayUtils
         {
             var subArrayStr = splited[i];
             var parseStr = subArrayStr.TrimEnd(',').TrimEnd(']').Split(',');
-            var subArr = parseStr.Select(x => char.Parse(x.Replace("'", string.Empty))).ToArray();
+            var subArr = parseStr.Select(x => char.Parse(x.Replace("'", string.Empty).Replace("\"", string.Empty))).ToArray();
             result[i] = subArr;
         }
 
