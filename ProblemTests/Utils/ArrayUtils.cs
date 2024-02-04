@@ -9,15 +9,36 @@ public static class ArrayUtils
         if (string.IsNullOrEmpty(str))
             return Array.Empty<int[]>();
 
-        var splited = str.Split('[', ']', StringSplitOptions.RemoveEmptyEntries);
+        var splited = str.Split(']', StringSplitOptions.RemoveEmptyEntries);
         var result = new int[splited.Length][];
 
         for (var i = 0; i < splited.Length; i++)
         {
             var subArrayStr = splited[i];
-            var parseStr = subArrayStr.TrimEnd(',').TrimEnd(']').Split(',');
+            var parseStr = subArrayStr.TrimStart(',').TrimStart('[').Split(',');
             var subArr = parseStr.Select(int.Parse).ToArray();
             result[i] = subArr;
+        }
+
+        return result;
+    }
+
+    public static IList<IList<int>> ListOfListFromStr(string str)
+    {
+        str = str.Replace(" ", string.Empty).TrimStart('[').TrimEnd(']');
+
+        if (string.IsNullOrEmpty(str))
+            return new List<IList<int>>();
+
+        var splited = str.Split(']', StringSplitOptions.RemoveEmptyEntries);
+        var result = new List<IList<int>>();
+
+        for (var i = 0; i < splited.Length; i++)
+        {
+            var subArrayStr = splited[i];
+            var parseStr = subArrayStr.TrimStart(',').TrimStart('[').Split(',');
+            var subArr = parseStr.Select(int.Parse).ToList();
+            result.Add(subArr);
         }
 
         return result;

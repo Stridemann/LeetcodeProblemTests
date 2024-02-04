@@ -44,14 +44,19 @@
     <Compile Remove="Add Binary.cs" />
     <Compile Remove="Add Two Numbers.cs" />
     <Compile Remove="Balanced Binary Tree.cs" />
+    <Compile Remove="Basic Calculator II.cs" />
+    <Compile Remove="Best Time to Buy and Sell Stock with Cooldown.cs" />
     <Compile Remove="Best Time to Buy and Sell Stock.cs" />
     <Compile Remove="Binary Tree Inorder Traversal.cs" />
     <Compile Remove="Binary Tree Level Order Traversal.cs" />
     <Compile Remove="Binary Tree Maximum Path Sum.cs" />
     <Compile Remove="Binary Tree Right Side View.cs" />
     <Compile Remove="Binary Tree X Traversal.cs" />
+    <Compile Remove="Burst Balloons.cs" />
+    <Compile Remove="Cheapest Flights Within K Stops.cs" />
     <Compile Remove="Climbing Stairs.cs" />
     <Compile Remove="Clone Graph.cs" />
+    <Compile Remove="Coin Change II.cs" />
     <Compile Remove="Coin Change.cs" />
     <Compile Remove="Combination Sum II.cs" />
     <Compile Remove="Combination Sum.cs" />
@@ -62,28 +67,37 @@
     <Compile Remove="Convert Sorted Array to Binary Search Tree.cs" />
     <Compile Remove="Copy List with Random Pointer.cs" />
     <Compile Remove="Count Good Nodes in Binary Tree.cs" />
+    <Compile Remove="Count Submatrices With All Ones.cs" />
     <Compile Remove="Counting Bits.cs" />
+    <Compile Remove="Course Schedule II.cs" />
+    <Compile Remove="Course Schedule.cs" />
     <Compile Remove="Daily Temperatures.cs" />
     <Compile Remove="Decode Ways.cs" />
     <Compile Remove="Decompress Run-Length Encoded List.cs" />
     <Compile Remove="Design Add and Search Words Data Structure.cs" />
+    <Compile Remove="Design Twitter.cs" />
+    <Compile Remove="Detect Squares.cs" />
     <Compile Remove="Detonate the Maximum Bombs.cs" />
     <Compile Remove="Diameter of Binary Tree.cs" />
     <Compile Remove="Evaluate Reverse Polish Notation.cs" />
     <Compile Remove="Excel Sheet Column Title.cs" />
     <Compile Remove="Find All Anagrams in a String.cs" />
     <Compile Remove="Find First and Last Position of Element in Sorted Array.cs" />
+    <Compile Remove="Find Median from Data Stream.cs" />
     <Compile Remove="Find Minimum in Rotated Sorted Array.cs" />
     <Compile Remove="Find the Duplicate Number.cs" />
     <Compile Remove="Find the Index of the First Occurrence in a String.cs" />
     <Compile Remove="First Missing Positive.cs" />
+    <Compile Remove="Gas Station.cs" />
     <Compile Remove="Group Anagrams.cs" />
     <Compile Remove="Guess Number Higher or Lower.cs" />
+    <Compile Remove="Hand of Straights.cs" />
     <Compile Remove="Happy Number.cs" />
     <Compile Remove="House Robber II.cs" />
     <Compile Remove="Implement Trie %28Prefix Tree%29.cs" />
     <Compile Remove="Insert Interval.cs" />
     <Compile Remove="Integer to Roman.cs" />
+    <Compile Remove="Interleaving String.cs" />
     <Compile Remove="Intersection of Two Linked Lists.cs" />
     <Compile Remove="Invert Binary Tree.cs" />
     <Compile Remove="Jump Game II.cs" />
@@ -98,7 +112,10 @@
     <Compile Remove="Letter Combinations of a Phone Number.cs" />
     <Compile Remove="Linked List Cycle.cs" />
     <Compile Remove="Linked List Random Node.cs" />
+    <Compile Remove="Longest Absolute File Path.cs" />
+    <Compile Remove="Longest Common Subsequence.cs" />
     <Compile Remove="Longest Consecutive Sequence.cs" />
+    <Compile Remove="Longest Increasing Path in a Matrix.cs" />
     <Compile Remove="Longest Increasing Subsequence.cs" />
     <Compile Remove="Longest Mountain in Array.cs" />
     <Compile Remove="Longest Palindromic Substring.cs" />
@@ -109,15 +126,19 @@
     <Compile Remove="LRU Cache.cs" />
     <Compile Remove="Maximal Rectangle.cs" />
     <Compile Remove="Maximum Depth of Binary Tree.cs" />
+    <Compile Remove="Maximum moment.cs" />
     <Compile Remove="Maximum Performance of a Team.cs" />
     <Compile Remove="Maximum Product Subarray.cs" />
     <Compile Remove="Max_Area_of_Island.cs" />
+    <Compile Remove="Merge Intervals.cs" />
     <Compile Remove="Merge k Sorted Lists.cs" />
     <Compile Remove="Merge Sorted Array.cs" />
     <Compile Remove="Merge Two Sorted Lists.cs" />
     <Compile Remove="Min Cost Climbing Stairs.cs" />
+    <Compile Remove="Min Cost to Connect All Points.cs" />
     <Compile Remove="Min Stack.cs" />
     <Compile Remove="Minimum Depth of Binary Tree.cs" />
+    <Compile Remove="Minimum Interval to Include Each Query.cs" />
     <Compile Remove="Minimum Number of Steps to Make Two Strings Anagram.cs" />
     <Compile Remove="Minimum Path Sum.cs" />
     <Compile Remove="Minimum Window Substring.cs" />
@@ -125,10 +146,14 @@
     <Compile Remove="Monotonic Array.cs" />
     <Compile Remove="Multiply Strings.cs" />
     <Compile Remove="N-Queens.cs" />
+    <Compile Remove="Network Delay Time.cs" />
+    <Compile Remove="Number of Substrings with All Zeroes.cs" />
+    <Compile Remove="OctreeTest.cs" />
     <Compile Remove="Pacific Atlantic Water Flow.cs" />
     <Compile Remove="Palindrome Partitioning.cs" />
     <Compile Remove="Palindromic Substrings.cs" />
     <Compile Remove="Partition Equal Subset Sum.cs" />
+    <Compile Remove="Partition Labels.cs" />
     <Compile Remove="Pascal%27s Triangle.cs" />
     <Compile Remove="Permutation in String.cs" />
     <Compile Remove="Plus One.cs" />
@@ -136,6 +161,7 @@
     <Compile Remove="Prime Pairs With Target Sum.cs" />
     <Compile Remove="Product of Array Except Self.cs" />
     <Compile Remove="Rectangle Area.cs" />
+    <Compile Remove="Redundant Connection.cs" />
     <Compile Remove="Regular Expression Matching.cs" />
     <Compile Remove="Remove Duplicates from Sorted Array.cs" />
     <Compile Remove="Remove Duplicates from Sorted List.cs" />
@@ -144,6 +170,7 @@
     <Compile Remove="Remove_Nth_Node_From_End_of_List.cs" />
     <Compile Remove="Reverse Linked List.cs" />
     <Compile Remove="Rotate Array.cs" />
+    <Compile Remove="Rotting Oranges.cs" />
     <Compile Remove="Same Tree.cs" />
     <Compile Remove="Search a 2D Matrix.cs" />
     <Compile Remove="Search in Rotated Sorted Array.cs" />
@@ -161,16 +188,23 @@
     <Compile Remove="Subtree of Another Tree.cs" />
     <Compile Remove="Sudoku Solver.cs" />
     <Compile Remove="Surrounded Regions.cs" />
+    <Compile Remove="Swim in Rising Water.cs" />
     <Compile Remove="Symmetric Tree.cs" />
+    <Compile Remove="Target Sum.cs" />
+    <Compile Remove="Task Scheduler.cs" />
     <Compile Remove="Text Justification.cs" />
+    <Compile Remove="Time Based Key-Value Store.cs" />
     <Compile Remove="Top K Frequent Elements.cs" />
     <Compile Remove="Trapping Rain Water II.cs" />
     <Compile Remove="Trapping Rain Water.cs" />
+    <Compile Remove="Triangle.cs" />
+    <Compile Remove="Triangle2.cs" />
     <Compile Remove="Two Sum II - Input Array Is Sorted.cs" />
     <Compile Remove="Unique Paths.cs" />
     <Compile Remove="UnitTest1.cs" />
     <Compile Remove="Valid Anagram.cs" />
     <Compile Remove="Valid Palindrome.cs" />
+    <Compile Remove="Valid Parenthesis String.cs" />
     <Compile Remove="Valid Sudoku.cs" />
     <Compile Remove="Validate Binary Search Tree.cs" />
     <Compile Remove="Wildcard Matching.cs" />
@@ -192,6 +226,12 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="VRage.Math">
+      <HintPath>..\..\SpaceEngineers Game Programmer - testing task v1.02\Dependencies\VRage.Math.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
