@@ -1,51 +1,39 @@
-﻿using Shouldly;
-
-public class Rotate_Image
-
+﻿public class Rotate_Array
 {
     [Theory]
-    [InlineData(new[] { 1, 2, 3 }, 2)]
-    public void Test(int[] nums, int expected)
+    [InlineData(new int[] { 1, 2, 3, 4, 5, 6, 7 }, 3, new int[] { 5, 6, 7, 1, 2, 3, 4 })]
+    [InlineData(new int[] { -1, -100, 3, 99 }, 2, new int[] { 3, 99, -1, -100 })]
+    public void Test(int[] input, int k, int[] expected)
     {
-        var matrix1 = new int[][]
-        {
-            new[] { 5, 1, 9, 11 },
-            new[] { 2, 4, 8, 10 },
-            new[] { 13, 3, 6, 7 },
-            new[] { 15, 14, 12, 16 },
-        };
-
-        var matrix2 = new int[][]
-        {
-            new[] { 1, 2, 3 },
-            new[] { 4, 5, 6 },
-            new[] { 7, 8, 9 },
-        };
         var s = new Solution();
-        s.Rotate(matrix2);
+        s.Rotate(input, k);
+        input.ShouldBe(expected);
     }
 }
 
 public class Solution
 {
-    public void Rotate(int[][] matrix)
+    public void Rotate(int[] nums, int k)
     {
-        var size = matrix.Length;
+        var shift = k % nums.Length;
 
-        for (int y = 0; y <= size / 2; y++)
+        if (shift == 0)
+            return;
+
+        var ptr1 = nums.Length - 1;
+        var ptr2 = nums.Length - shift - 1;
+
+        for (int i = 0; i < nums.Length; i++)
         {
-            for (int x = y; x < size - y - 1; x++)
-            {
-                var ind2X = size - y - 1;
-                var ind3X = size - x - 1;
-                var ind3Y = size - y - 1;
-                var ind4Y = size - x - 1;
-                var tmp = matrix[y][x];
-                matrix[y][x] = matrix[ind4Y][y];
-                matrix[ind4Y][y] = matrix[ind3Y][ind3X];
-                matrix[ind3Y][ind3X] = matrix[x][ind2X];
-                matrix[x][ind2X] = tmp;
-            }
+            (nums[ptr1], nums[ptr2]) = (nums[ptr2], nums[ptr1]);
+            ptr1--;
+            ptr2--;
+
+            if (ptr1 < 0)
+                ptr1 = nums.Length - 1;
+
+            if (ptr2 < 0)
+                ptr2 = nums.Length - 1;
         }
     }
 }

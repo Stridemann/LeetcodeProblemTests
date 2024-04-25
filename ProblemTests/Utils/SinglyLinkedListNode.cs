@@ -1,45 +1,56 @@
 ﻿using System.Diagnostics;
 using System.Text;
 
-[DebuggerDisplay(">{val}<")]
-public class ListNode
+[DebuggerDisplay(">{data}<")]
+public class SinglyLinkedListNode
 {
-    public int val;
-    public ListNode? next;
+    public int data;
+    public SinglyLinkedListNode? next;
 
-    public ListNode(int val = 0, ListNode? next = null)
+    public SinglyLinkedListNode(int val = 0, SinglyLinkedListNode? next = null)
     {
-        this.val = val;
+        this.data = val;
         this.next = next;
     }
 
-    public static ListNode GetList(params int[] values)
+    public static SinglyLinkedListNode GetList(params int[] values)
     {
         if (values == null || values.Length == 0)
             return null;
 
-        var cur = new ListNode(values[0]);
+        var cur = new SinglyLinkedListNode(values[0]);
         var head = cur;
 
         for (int i = 1; i < values.Length; i++)
         {
-            cur.next = new ListNode(values[i]);
+            cur.next = new SinglyLinkedListNode(values[i]);
             cur = cur.next;
         }
 
         return head;
     }
 
-    public static ListNode FromString(string cfg)
+    public static SinglyLinkedListNode FromString(string cfg)
     {
         return GetList(cfg.Replace(" ", string.Empty).TrimStart('[').TrimEnd(']').Split(',').Select(int.Parse).ToArray());
+    }
+
+    public SinglyLinkedListNode? FindNode(int value)
+    {
+        for (var iter = this; iter != null; iter = iter.next)
+        {
+            if(iter.data == value)
+                return iter;
+        }
+
+        throw new Exception("Cannot find node");
     }
 
     #region Overrides of Object
 
     public override string ToString()
     {
-        return $">{val}<";
+        return $">{data}<";
     }
 
     #endregion
@@ -56,7 +67,7 @@ public class ListNode
             {
                 if (sb.Length > 1)
                     sb.Append(",");
-                sb.Append(node.val);
+                sb.Append(node.data);
                 node = node.next;
             }
 
